@@ -12,6 +12,6 @@ public class Player : MonoBehaviour
     public void Hurt(int damage)
     {
         health -= damage;
-        Debug.Log($"Health: {health}");
+        Debug.Log(health);
     }
 }
