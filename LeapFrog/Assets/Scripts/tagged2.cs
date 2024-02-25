@@ -1,20 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class tagged2 : MonoBehaviour
 {
     public int tag = 0;
+    public TMP_Text scoreText;
+    public TMP_Text Winner;
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Start()
     {
-        Debug.Log("Player 2 score: " + tag);
+        Winner.text = "";
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.tag == "Player1") {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player1")
+        {
             tag += 1;
+            scoreText.text = "Player 2: " + tag.ToString(); // Update the score text
+            if (tag == 4)
+            {
+                Winner.text = "Player 2 Wins!";
+            }
         }
     }
 }

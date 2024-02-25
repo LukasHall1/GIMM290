@@ -22,5 +22,6 @@ public class schmoovin : MonoBehaviour
         if(Input.GetKey(KeyCode.S)) {
             transform.position += transform.up * speed * Time.deltaTime;
         }
+
     }
 }
